@@ -18,6 +18,12 @@ struct RouteListView: View {
     private var routes: FetchedResults<Route>
     
     @State var showAddRouteView : Bool = false
+    @State var showLoginView : Bool = false
+    @State var isLoggedIn : Bool = false
+    @State var isSigningUp : Bool = false
+    @State var username : String = ""
+    @State var showAlert : Bool = false
+    @State var alertTitle : String = ""
 
     var body: some View {
         NavigationView {
@@ -40,20 +46,32 @@ struct RouteListView: View {
                 .onDelete(perform: deleteRoutes)
             }
             .toolbar {
-                ToolbarItem {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showLoginView = true
+                    }) {
+                        Label("Add Item", systemImage: "person.circle")
+                    }
+                    
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         showAddRouteView = true
                     }) {
                         Label("Add Item", systemImage: "plus")
                     }
-                    .sheet(isPresented: $showAddRouteView, content: {
-                        AddRouteView(showAddRouteView: $showAddRouteView)
-                    })
                 }
+
             }
             .navigationBarTitle(
                 Text("Route List")
             )
+            .sheet(isPresented: $showLoginView, content: {
+                SignUpAndLoginView(showLoginView: $showLoginView, isLoggedIn: $isLoggedIn, isSigningUp: $isSigningUp, username: $username, alertTitle: $alertTitle, showAlert: $showAlert)
+            })
+            .sheet(isPresented: $showAddRouteView, content: {
+                AddRouteView(showAddRouteView: $showAddRouteView)
+            })
         }
     }
 

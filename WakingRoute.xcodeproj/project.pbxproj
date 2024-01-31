@@ -15,6 +15,10 @@
 		1A5DDBD72B69E9EE009621DA /* AddRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DDBD62B69E9EE009621DA /* AddRouteView.swift */; };
 		1A5DDBDD2B6A297C009621DA /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DDBDC2B6A297C009621DA /* CustomMapView.swift */; };
 		1A5DDBDF2B6A44AC009621DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A5DDBDE2B6A44AC009621DA /* GoogleService-Info.plist */; };
+		1A5DDBE22B6A467C009621DA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5DDBE12B6A467C009621DA /* FirebaseAnalytics */; };
+		1A5DDBE42B6A467C009621DA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5DDBE32B6A467C009621DA /* FirebaseAuth */; };
+		1A5DDBE62B6A47ED009621DA /* SignUpAndLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DDBE52B6A47ED009621DA /* SignUpAndLoginView.swift */; };
+		1A5DDBE82B6A7198009621DA /* addRouteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DDBE72B6A7198009621DA /* addRouteUITests.swift */; };
 		1AE8CE3D2B3CDC0200B70F27 /* WakingRouteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8CE3C2B3CDC0200B70F27 /* WakingRouteApp.swift */; };
 		1AE8CE3F2B3CDC0200B70F27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8CE3E2B3CDC0200B70F27 /* ContentView.swift */; };
 		1AE8CE412B3CDC0500B70F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE8CE402B3CDC0500B70F27 /* Assets.xcassets */; };
@@ -53,6 +57,8 @@
 		1A5DDBD62B69E9EE009621DA /* AddRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteView.swift; sourceTree = "<group>"; };
 		1A5DDBDC2B6A297C009621DA /* CustomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
 		1A5DDBDE2B6A44AC009621DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1A5DDBE52B6A47ED009621DA /* SignUpAndLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAndLoginView.swift; sourceTree = "<group>"; };
+		1A5DDBE72B6A7198009621DA /* addRouteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRouteUITests.swift; sourceTree = "<group>"; };
 		1AE8CE392B3CDC0200B70F27 /* WakingRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakingRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE8CE3C2B3CDC0200B70F27 /* WakingRouteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakingRouteApp.swift; sourceTree = "<group>"; };
 		1AE8CE3E2B3CDC0200B70F27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5DDBE22B6A467C009621DA /* FirebaseAnalytics in Frameworks */,
+				1A5DDBE42B6A467C009621DA /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +133,7 @@
 				1A5DDBC62B666B0D009621DA /* RouteListView.swift */,
 				1A5DDBD62B69E9EE009621DA /* AddRouteView.swift */,
 				1A5DDBCE2B667A8A009621DA /* DetailView.swift */,
+				1A5DDBE52B6A47ED009621DA /* SignUpAndLoginView.swift */,
 				1A5DDBDC2B6A297C009621DA /* CustomMapView.swift */,
 				1AE8CE402B3CDC0500B70F27 /* Assets.xcassets */,
 				1AE8CE452B3CDC0500B70F27 /* Persistence.swift */,
@@ -155,6 +164,7 @@
 			children = (
 				1AE8CE5C2B3CDC0500B70F27 /* WakingRouteUITests.swift */,
 				1AE8CE5E2B3CDC0500B70F27 /* WakingRouteUITestsLaunchTests.swift */,
+				1A5DDBE72B6A7198009621DA /* addRouteUITests.swift */,
 			);
 			path = WakingRouteUITests;
 			sourceTree = "<group>";
@@ -175,6 +185,10 @@
 			dependencies = (
 			);
 			name = WakingRoute;
+			packageProductDependencies = (
+				1A5DDBE12B6A467C009621DA /* FirebaseAnalytics */,
+				1A5DDBE32B6A467C009621DA /* FirebaseAuth */,
+			);
 			productName = WakingRoute;
 			productReference = 1AE8CE392B3CDC0200B70F27 /* WakingRoute.app */;
 			productType = "com.apple.product-type.application";
@@ -247,6 +261,9 @@
 				Base,
 			);
 			mainGroup = 1AE8CE302B3CDC0200B70F27;
+			packageReferences = (
+				1A5DDBE02B6A467C009621DA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 1AE8CE3A2B3CDC0200B70F27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,6 +313,7 @@
 				1A5DDBCF2B667A8A009621DA /* DetailView.swift in Sources */,
 				1A5DDBC92B666CC0009621DA /* MapView.swift in Sources */,
 				1AE8CE462B3CDC0500B70F27 /* Persistence.swift in Sources */,
+				1A5DDBE62B6A47ED009621DA /* SignUpAndLoginView.swift in Sources */,
 				1AE8CE3F2B3CDC0200B70F27 /* ContentView.swift in Sources */,
 				1A5DDBC72B666B0D009621DA /* RouteListView.swift in Sources */,
 				1AE8CE3D2B3CDC0200B70F27 /* WakingRouteApp.swift in Sources */,
@@ -316,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5DDBE82B6A7198009621DA /* addRouteUITests.swift in Sources */,
 				1AE8CE5D2B3CDC0500B70F27 /* WakingRouteUITests.swift in Sources */,
 				1AE8CE5F2B3CDC0500B70F27 /* WakingRouteUITestsLaunchTests.swift in Sources */,
 			);
@@ -644,6 +663,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A5DDBE02B6A467C009621DA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A5DDBE12B6A467C009621DA /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A5DDBE02B6A467C009621DA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		1A5DDBE32B6A467C009621DA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A5DDBE02B6A467C009621DA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1AE8CE472B3CDC0500B70F27 /* WakingRoute.xcdatamodeld */ = {
