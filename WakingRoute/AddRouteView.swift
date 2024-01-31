@@ -22,6 +22,8 @@ struct AddRouteView: View {
     @State var destinationLat : String = ""
     @State var destinationLon : String = ""
     
+    @State private var showAlert = false
+    
     var body: some View {
         Text("Create a new route")
             .font(.largeTitle)
@@ -96,18 +98,22 @@ struct AddRouteView: View {
                 createRoute()
             }, label: {
                 Text("Save")
-            })
+            }).padding()
+            Spacer()
             Button(action: {
                 showAddRouteView = false
             }, label: {
                 Text("Cancel")
-            })
+            }).padding()
         }
         Spacer()
+        
     }
     
     fileprivate func createRoute() {
+        
         let route = Route(context: viewContext)
+        
         route.name = name
         route.initialLat = Double(initialLat) ?? 0.0
         route.initialLon = Double(initialLon) ?? 0.0

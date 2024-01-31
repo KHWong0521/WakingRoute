@@ -37,7 +37,7 @@ struct DetailView: View {
     var body: some View {
         VStack {
             
-            if let image,
+            if let image = image,
                 let image = UIImage(data: image) {
 
                 Image(uiImage: image)
@@ -97,7 +97,7 @@ struct DetailView: View {
             initialLon = String(route.initialLon)
             destinationLat = String(route.destinationLat)
             destinationLon = String(route.destinationLon)
-            image = route.image!
+            // image = route.image!
         }
     }
 }

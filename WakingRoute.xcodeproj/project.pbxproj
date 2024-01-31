@@ -13,6 +13,8 @@
 		1A5DDBD22B667F6F009621DA /* Route+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DDBD02B667F6F009621DA /* Route+CoreDataClass.swift */; };
 		1A5DDBD32B667F6F009621DA /* Route+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DDBD12B667F6F009621DA /* Route+CoreDataProperties.swift */; };
 		1A5DDBD72B69E9EE009621DA /* AddRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DDBD62B69E9EE009621DA /* AddRouteView.swift */; };
+		1A5DDBDD2B6A297C009621DA /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DDBDC2B6A297C009621DA /* CustomMapView.swift */; };
+		1A5DDBDF2B6A44AC009621DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A5DDBDE2B6A44AC009621DA /* GoogleService-Info.plist */; };
 		1AE8CE3D2B3CDC0200B70F27 /* WakingRouteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8CE3C2B3CDC0200B70F27 /* WakingRouteApp.swift */; };
 		1AE8CE3F2B3CDC0200B70F27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8CE3E2B3CDC0200B70F27 /* ContentView.swift */; };
 		1AE8CE412B3CDC0500B70F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE8CE402B3CDC0500B70F27 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		1A5DDBD02B667F6F009621DA /* Route+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1A5DDBD12B667F6F009621DA /* Route+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1A5DDBD62B69E9EE009621DA /* AddRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteView.swift; sourceTree = "<group>"; };
+		1A5DDBDC2B6A297C009621DA /* CustomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
+		1A5DDBDE2B6A44AC009621DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1AE8CE392B3CDC0200B70F27 /* WakingRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakingRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE8CE3C2B3CDC0200B70F27 /* WakingRouteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakingRouteApp.swift; sourceTree = "<group>"; };
 		1AE8CE3E2B3CDC0200B70F27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,12 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				1A5DDBC32B665586009621DA /* Info.plist */,
+				1A5DDBDE2B6A44AC009621DA /* GoogleService-Info.plist */,
 				1AE8CE3C2B3CDC0200B70F27 /* WakingRouteApp.swift */,
 				1AE8CE3E2B3CDC0200B70F27 /* ContentView.swift */,
 				1A5DDBC82B666CC0009621DA /* MapView.swift */,
 				1A5DDBC62B666B0D009621DA /* RouteListView.swift */,
 				1A5DDBD62B69E9EE009621DA /* AddRouteView.swift */,
 				1A5DDBCE2B667A8A009621DA /* DetailView.swift */,
+				1A5DDBDC2B6A297C009621DA /* CustomMapView.swift */,
 				1AE8CE402B3CDC0500B70F27 /* Assets.xcassets */,
 				1AE8CE452B3CDC0500B70F27 /* Persistence.swift */,
 				1AE8CE472B3CDC0500B70F27 /* WakingRoute.xcdatamodeld */,
@@ -259,6 +265,7 @@
 			files = (
 				1AE8CE442B3CDC0500B70F27 /* Preview Assets.xcassets in Resources */,
 				1AE8CE412B3CDC0500B70F27 /* Assets.xcassets in Resources */,
+				1A5DDBDF2B6A44AC009621DA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AE8CE492B3CDC0500B70F27 /* WakingRoute.xcdatamodeld in Sources */,
+				1A5DDBDD2B6A297C009621DA /* CustomMapView.swift in Sources */,
 				1A5DDBD32B667F6F009621DA /* Route+CoreDataProperties.swift in Sources */,
 				1A5DDBCF2B667A8A009621DA /* DetailView.swift in Sources */,
 				1A5DDBC92B666CC0009621DA /* MapView.swift in Sources */,

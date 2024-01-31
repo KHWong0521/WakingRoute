@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyA0fmlb66VI8ohEgb0NjaRxLAUTfKxU_bA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>385586628411</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.shape.WakingRoute</string>
+	<key>PROJECT_ID</key>
+	<string>walkingroute-d9d3b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>walkingroute-d9d3b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:385586628411:ios:4341ccda86c5f9416a991e</string>
+</dict>
+</plist>

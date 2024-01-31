@@ -14,6 +14,7 @@ struct RouteListView: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Route.name, ascending: true)],
         animation: .default)
+    
     private var routes: FetchedResults<Route>
     
     @State var showAddRouteView : Bool = false
@@ -25,6 +26,14 @@ struct RouteListView: View {
                     NavigationLink {
                         DetailView(route: route)
                     } label: {
+                        if let image = route.image,
+                            let image = UIImage(data: image) {
+
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width: 100.0, height: 80.0)
+
+                        }
                         Text("\(route.name!)")
                     }
                 }
