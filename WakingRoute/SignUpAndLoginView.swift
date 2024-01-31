@@ -169,16 +169,26 @@ struct SignUpAndLoginView: View {
     }
 
     func login() {
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if error != nil {
-                print(error?.localizedDescription ?? "")
-            } else {
-                print("success log in")
-                username = email
-                isLoggedIn = true
+        if email.isEmpty {
+            alertTitle = "Please fill your email"
+            showAlert = true
+        } else if password.isEmpty {
+            alertTitle = "Please fill your password"
+            showAlert = true
+        } else if password.count < 6 {
+            alertTitle = "Password length must be atleast 6 characters"
+            showAlert = true
+        } else {
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "")
+                } else {
+                    print("success log in")
+                    username = email
+                    isLoggedIn = true
+                }
             }
         }
-        
     }
 }
 
