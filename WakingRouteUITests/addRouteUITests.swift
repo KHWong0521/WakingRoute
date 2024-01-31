@@ -39,14 +39,45 @@ final class addRouteUITests: XCTestCase {
         }
     }
     
-        func testCheckAllUIFieldsOfAddRouteView(){
+        
+    func testCheckAllUIFieldsOfAddRouteView() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
         
-        XCTAssert(app.textFields["BTC"].waitForExistence(timeout: 0.5))
-        XCTAssert(app.buttons["Convert"].waitForExistence(timeout: 0.5))
-        XCTAssert(app.staticTexts["0.00"].waitForExistence(timeout: 0.5))
+        app.tabBars["Tab Bar"].buttons["Route List"].tap()
         
+        let addItemButton = app.navigationBars["Route List"].children(matching: .button).matching(identifier: "Add Item").element(boundBy: 1)
+        addItemButton.tap()
+        app.textFields["Name"].tap()
+        app.textFields["Initial Latitude"].tap()
+        app.textFields["Initial Longtitude"].tap()
+        app.textFields["Destination Latitude"].tap()
+        app.textFields["Destination Longtitude"].tap()
+        app.buttons["Cancel"].tap()
+        
+    }
+    
+    func testAppShowCreatedRouteCorrectly() throws {
+        // UI tests must launch the application that they test.
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.tabBars["Tab Bar"].buttons["Route List"].tap()
+        
+        let addItemButton = app.navigationBars["Route List"].children(matching: .button).matching(identifier: "Add Item").element(boundBy: 1)
+        addItemButton.tap()
+        
+        let textField = app.textFields["Name"]
+        textField.tap()
+        textField.typeText("Test")
+        app.buttons["Save"].tap()
+
+        let collectionViewsQuery = app.collectionViews
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 1).staticTexts["Test"].tap()
+
+        let resultField = app.textFields["Test"]
+        XCTAssertEqual(resultField.value as! String, "Test")
     }
 }
