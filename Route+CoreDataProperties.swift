@@ -2,7 +2,7 @@
 //  Route+CoreDataProperties.swift
 //  WakingRoute
 //
-//  Created by KwanHoWong on 28/1/2024.
+//  Created by KwanHoWong on 31/1/2024.
 //
 //
 
@@ -21,6 +21,7 @@ extension Route {
     @NSManaged public var destinationLat: Double
     @NSManaged public var initialLon: Double
     @NSManaged public var destinationLon: Double
+    @NSManaged public var image: Data?
 
 }
 

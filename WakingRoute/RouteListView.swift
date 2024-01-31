@@ -15,6 +15,8 @@ struct RouteListView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Route.name, ascending: true)],
         animation: .default)
     private var routes: FetchedResults<Route>
+    
+    @State var showAddRouteView : Bool = false
 
     var body: some View {
         NavigationView {
@@ -29,8 +31,15 @@ struct RouteListView: View {
                 .onDelete(perform: deleteRoutes)
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                ToolbarItem {
+                    Button(action: {
+                        showAddRouteView = true
+                    }) {
+                        Label("Add Item", systemImage: "plus")
+                    }
+                    .sheet(isPresented: $showAddRouteView, content: {
+                        AddRouteView(showAddRouteView: $showAddRouteView)
+                    })
                 }
             }
             .navigationBarTitle(

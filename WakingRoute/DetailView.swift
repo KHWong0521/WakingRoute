@@ -15,17 +15,19 @@ struct DetailView: View {
     var route : Route
     
     @State var name : String = ""
-    @State var initialLat : Double = 0.0
-    @State var initialLon : Double = 0.0
-    @State var destinationLat : Double = 0.0
-    @State var destinationLon : Double = 0.0
+    @State var initialLat : String = ""
+    @State var initialLon : String = ""
+    @State var destinationLat : String = ""
+    @State var destinationLon : String = ""
+    @State var image : Data?
     
     fileprivate func saveAndBack() {
         route.name = name
-        route.initialLat = initialLat
-        route.initialLon = initialLon
-        route.destinationLat = destinationLat
-        route.destinationLon = destinationLon
+        route.initialLat = Double(initialLat) ?? 0.0
+        route.initialLon = Double(initialLon) ?? 0.0
+        route.destinationLat = Double(destinationLat) ?? 0.0
+        route.destinationLon = Double(destinationLon) ?? 0.0
+        route.image = image
 
         try? viewContext.save()
 
@@ -34,11 +36,52 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            TextField("Name", text: $name).padding()
-            TextField("Initial Latitude", value: $initialLat, formatter: NumberFormatter()).padding()
-            TextField("Initial Longtitude", value: $initialLon, formatter: NumberFormatter()).padding()
-            TextField("Destination Latitude", value: $destinationLat, formatter: NumberFormatter()).padding()
-            TextField("Destination Longtitude", value: $destinationLon, formatter: NumberFormatter()).padding()
+            
+            if let image,
+                let image = UIImage(data: image) {
+
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(width: 200.0, height: 200.0)
+
+            }
+            
+            VStack {
+                HStack {
+                    Text("Name:")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    TextField("Name", text: $name)
+                }
+                
+                HStack {
+                    Text("Initial Latitude:")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    TextField("Initial Latitude", text: $initialLat)
+                }
+                
+                HStack {
+                    Text("Initial Longtitude:")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    TextField("Initial Longtitude", text: $initialLon)
+                }
+                
+                HStack {
+                    Text("Destination Latitude:")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    TextField("Destination Latitude", text: $destinationLat)
+                }
+               
+                HStack {
+                    Text("Destination Longtitude:")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    TextField("Destination Longtitude", text: $destinationLon)
+                }
+            }
             
             HStack {
                 Button(action: {
@@ -50,10 +93,11 @@ struct DetailView: View {
             Spacer()
         }.onAppear {
             name = route.name!
-            initialLat = route.initialLat
-            initialLon = route.initialLon
-            destinationLat = route.destinationLat
-            destinationLon = route.destinationLon
+            initialLat = String(route.initialLat)
+            initialLon = String(route.initialLon)
+            destinationLat = String(route.destinationLat)
+            destinationLon = String(route.destinationLon)
+            image = route.image!
         }
     }
 }
