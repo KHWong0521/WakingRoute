@@ -75,22 +75,6 @@ struct RouteListView: View {
         }
     }
 
-    func loadDefaultRoute(_ name: String, _ initialLat: Double, _ initialLon: Double, _ destinationLat: Double, _ destinationLon: Double) {
-        withAnimation {
-            // let newRoute = Route(context: viewContext)
-            // newRoute.initial = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
     private func deleteRoutes(offsets: IndexSet) {
         withAnimation {
             offsets.map { routes[$0] }.forEach(viewContext.delete)
@@ -98,8 +82,6 @@ struct RouteListView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

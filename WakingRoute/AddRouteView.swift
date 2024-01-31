@@ -37,6 +37,7 @@ struct AddRouteView: View {
                 icon: { Image(systemName: "photo.stack") }
             )
         }
+        // Catch the change of selectedItem which is photodata
         .onChange(of: selectedItem) { newItem in
             Task {
                 if let data = try? await newItem?.loadTransferable(type: Data.self) {

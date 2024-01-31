@@ -37,6 +37,7 @@ struct DetailView: View {
     var body: some View {
         VStack {
             
+            // Show the route image if exist
             if let image = image,
                 let image = UIImage(data: image) {
 

@@ -52,6 +52,8 @@ struct MapView: View {
                     Button(action: {
                         selectedRoute = route
                         
+                        // pass selected route's coordinates to binding parameters
+                        // For Custom Map View
                         locationInit.latitude = selectedRoute!.initialLat
                         locationInit.longitude = selectedRoute!.initialLon
                         locationDest.latitude = selectedRoute!.destinationLat
