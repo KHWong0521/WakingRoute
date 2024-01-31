@@ -80,4 +80,27 @@ final class addRouteUITests: XCTestCase {
         let resultField = app.textFields["Test"]
         XCTAssertEqual(resultField.value as! String, "Test")
     }
+    
+    func testAppShowCreatedRouteFailed() throws {
+        // UI tests must launch the application that they test.
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.tabBars["Tab Bar"].buttons["Route List"].tap()
+        
+        let addItemButton = app.navigationBars["Route List"].children(matching: .button).matching(identifier: "Add Item").element(boundBy: 1)
+        addItemButton.tap()
+        
+        let textField = app.textFields["Name"]
+        textField.tap()
+        textField.typeText("Test")
+        app.buttons["Save"].tap()
+
+        let collectionViewsQuery = app.collectionViews
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 1).staticTexts["Test"].tap()
+
+        let resultField = app.textFields["Test"]
+        XCTAssertEqual(resultField.value as! String, "")
+    }
 }
